@@ -16,4 +16,4 @@
 	
 	<!-- jquery & lib-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
-    <script src="lib/mosaiqy-1.0.2.js" id="mosaiqy_tpl">
+    <script src="lib/mosaiqy-1.0.2.min.js" id="mosaiqy_tpl">

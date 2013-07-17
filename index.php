@@ -95,9 +95,9 @@
                <li>Switched from <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> to <a href="http://closure-compiler.appspot.com/home">Google Closure
                Compiler</a> since it achieved a better compress ratio. Code is now smaller in size. <br />(~4% less both for minified only and minified + gzip)</li>
             </ul>
-            <p>Note: this version is intended for jQuery 1.6 and 1.7.</p>
+            <p>Note: this version is intended for jQuery 1.6, 1.7 and 1.8.</p>
             
-            <h3>Version 1.0.2 <small>release date: <time>July 18, 2013</time></small></h3>
+            <h3>Version 1.0.2 <small>release date: <time>July 17, 2013</time></small></h3>
             <p>This is a maintainance release due to the changed occured in jQuery since version 1.9</p>
             <ul>
                <li>Fix: $.sub and $.browser have been deprecated.</li>
@@ -161,7 +161,7 @@
         <pre><code>&lt;link rel="stylesheet" media="screen" href="lib/lib-css/mosaiqy.css" /&gt;</code></pre>
         
         <pre><code>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt; &lt;/script&gt;
-&lt;script src="lib/mosaiqy-1.0.1.min.js" id="mosaiqy-tpl"&gt;&lt;/script&gt;</code></pre>
+&lt;script src="lib/mosaiqy-1.0.2.min.js" id="mosaiqy-tpl"&gt;&lt;/script&gt;</code></pre>
 
     </section>
     
@@ -175,7 +175,7 @@
             are retrieved by a JSON/JSONP data structure. This is the javascript snippet I used for the example in this page (you can find it at the bottom of the source code)
         </p>
         
-        <pre><code>&lt;script src="lib/mosaiqy-1.0.1.min.js" id="<b>mosaiqy_tpl</b>"&gt;
+        <pre><code>&lt;script src="lib/mosaiqy-1.0.2.min.js" id="<b>mosaiqy_tpl</b>"&gt;
 <em>    &lt;div&gt;
         &lt;figure&gt;&lt;a href="images/zoom/<b>${img}</b>"&gt;&lt;img src="images/thumb/<b>${img}</b>" <b>longdesc</b>="..."&gt;
           &lt;figcaption&gt;<b>${desc}</b>&lt;/figcaption&gt;&lt;/a&gt;
@@ -343,16 +343,16 @@ $(document).ready(function() {
             to make also commercial use of the work under some restrictions (see carefully the link above). 
          </p>
         
-         <?php $hitcount = @file_get_contents('count101.txt') ?>
+         <?php $hitcount = @file_get_contents('count102.txt') ?>
          <p id="dwlink">
             <a href="mosaiqy1.0.2.zip">Download CSS, JS and Demos <small>(approx. 2Mb)</small>
             <ins>Checksum: 60b20b47d260071f27db85600bef3d292bfa5f24  &mdash; Download #<?php echo $hitcount ?></ins></a>
             <a href="lib/mosaiqy-1.0.2.min.js">Download only minified JS <small>(8.41 kb)</small>
-            <ins>Checksum: b1d7b37f87fba0ace8ca108eda0bf2347c688667</ins></a>
+            <ins>Checksum: 8a08212b09dcdbbcae8e6a70b7ff0fbf</ins></a>
          </p>
         
         <p>
-            <strong>Note</strong>: the <a href="lib/mosaiqy-1.0.1.js" target="new">original source code</a> is meant for <strong>development
+            <strong>Note</strong>: the <a href="lib/mosaiqy-1.0.2.js" target="new">original source code</a> is meant for <strong>development
             purposes only</strong>  since it's 45.7Kb and it contains debug statements, thus it's not suitable for production
             environment. Use it anyway for check the overall quality of the code and/or when you have to debug your
             application (look at log messages into the Firefox console or
@@ -395,8 +395,8 @@ $(document).ready(function() {
                     <ul>
                         <li class="current"><span data-currency="EUR"  title="EUR">&euro;</span></li>
                         <li><span data-currency="USD" title="USD (5&euro; is approx. 6.6$)">$</span></li>
-                        <li><span data-currency="GBP" title="GBP (5&euro; is approx. 4.2£)">£</span></li>
-                        <li><span data-currency="JPY" title="JPY (5&euro; is approx. 500&yen;)">&yen;</span></li>
+                        <li><span data-currency="GBP" title="GBP (5&euro; is approx. 4.4£)">£</span></li>
+                        <li><span data-currency="JPY" title="JPY (5&euro; is approx. 660&yen;)">&yen;</span></li>
                     </ul>
                 </fieldset>
             </div>

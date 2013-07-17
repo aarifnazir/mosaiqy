@@ -6,25 +6,25 @@
             <a class="addthis_button_google_plusone ib"
 				addthis:url="http://www.fabriziocalderan.it/mosaiqy/index.php"
 				addthis:title="Mosaiqy, a nice jQuery and HTML5 image gallery plugin."
-				addthis:description="Mosaiqy, is a photogallery plugin for jQuery 1.6+ with slide effects on thumbnails and zoom"></a>
+				addthis:description="Mosaiqy, is a photogallery plugin for jQuery 1.9+ with slide effects on thumbnails and zoom"></a>
             <a class="addthis_button_twitter ib"
    			    addthis:url="http://www.fabriziocalderan.it/mosaiqy/"
                 addthis:title="#Mosaiqy, a new amazing #jQuery + #HTML5 image gallery plugin."></a>
             <a class="addthis_button_linkedin ib"
 				addthis:url="http://www.fabriziocalderan.it/mosaiqy/index.php"
 				addthis:title="Mosaiqy, a nice jQuery and HTML5 image gallery plugin."
-				addthis:description="Mosaiqy, is a photogallery plugin for jQuery 1.6+ with slide effects on thumbnails and zoom"></a>
+				addthis:description="Mosaiqy, is a photogallery plugin for jQuery 1.9+ with slide effects on thumbnails and zoom"></a>
             <a class="addthis_button_facebook ib"></a>
             <a class="addthis_button_reddit ib"
 				addthis:url="http://www.fabriziocalderan.it/mosaiqy/index.php"
-				addthis:title="Mosaiqy, a nice photogallery plugin for jQuery 1.6+ and HTML5 with slide effects on thumbnails and zoom"></a>
+				addthis:title="Mosaiqy, a nice photogallery plugin for jQuery 1.9+ and HTML5 with slide effects on thumbnails and zoom"></a>
             <a class="addthis_button_delicious ib"
 				addthis:url="http://www.fabriziocalderan.it/mosaiqy/index.php"
-				addthis:title="Mosaiqy, a nice photogallery plugin for jQuery 1.6+ and HTML5 with slide effects on thumbnails and zoom"></a>
+				addthis:title="Mosaiqy, a nice photogallery plugin for jQuery 1.9+ and HTML5 with slide effects on thumbnails and zoom"></a>
             <a class="addthis_button_stumbleupon ib"
 				addthis:url="http://www.fabriziocalderan.it/mosaiqy/"
 				addthis:title="Mosaiqy, a nice jQuery and HTML5 image gallery plugin."
-				addthis:description="Mosaiqy, is a photogallery plugin for jQuery 1.6+ with slide effects on thumbnails and zoom"></a>
+				addthis:description="Mosaiqy, is a photogallery plugin for jQuery 1.9+ with slide effects on thumbnails and zoom"></a>
             <a class="addthis_counter addthis_bubble_style ib"></a>
         </div>
         <script>
