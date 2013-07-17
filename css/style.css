@@ -8,9 +8,9 @@
 /* inline blocks */
 
 .ibw {
-  white-space       : nowrap; 
+  white-space       : nowrap;
   letter-spacing    : -4px;
-  word-spacing      : -4px;  
+  word-spacing      : -4px;
 }
 
 .ibw > li,
@@ -19,12 +19,12 @@
   display           : inline-block !important;     /* FF3, Opera, Safari */
   white-space       : normal;
   letter-spacing    : normal;
-  word-spacing      : normal; 
+  word-spacing      : normal;
 }
 
 
 .ie6 .ib, .ie7 .ib,
-.ie6 .ibw li,  .ie7 .ibw li { display : inline; } 
+.ie6 .ibw li,  .ie7 .ibw li { display : inline; }
 
 
 body {
@@ -49,7 +49,7 @@ ol, ul, p, dl {
 }
 
 .mosaiqy * {
-    text-shadow     : none;    
+    text-shadow     : none;
 }
 
 noscript {
@@ -74,7 +74,7 @@ h1 a:visited    {  color       : #fff; }
 
 #demolist li {
     display     : inline;
-    padding     : 0 15px;   
+    padding     : 0 15px;
     border-left : 1px #5d6061 solid;
 }
 
@@ -103,7 +103,7 @@ h1 a:visited    {  color       : #fff; }
     border-top          : 1px solid #999;
     border-bottom       : 1px solid #999;
 }
-  
+
 .github-ribbon a {
     color               : #fff;
     display             : block;
@@ -165,11 +165,11 @@ h2, #demotitle  {
     text-shadow     : -1px 1px 0px #fff;
 }
 
-    
+
     section h2, dt {
         color           : #A66C6D;
     }
-    
+
     section p + p {
         margin-top      : 1.5em;
     }
@@ -229,9 +229,9 @@ header h2:after, header h2:before {
     }
 
     section ol {
-        margin          : 15px 20px;    
+        margin          : 15px 20px;
     }
-    
+
     nav ul {
         text-align      : center;
         list-style      : none;
@@ -249,13 +249,13 @@ header h2:after, header h2:before {
             padding-right    : 10px;
             color            : #fff;
         }
-        
-        
+
+
         .ie7 nav li:before,
         .ie8 nav li:before {
             content          : " ";
         }
-        
+
 nav li:first-child:before {
     padding-right    : 0;
     content          : "";
@@ -329,7 +329,7 @@ pre code b {
     background      : #f2f2f6;
     width           : auto;
     padding         : 2px 4px;
-    -ms-border-radius       : 8px;    
+    -ms-border-radius       : 8px;
     -webkit-border-radius   : 8px;
     -moz-border-radius      : 8px;
     border-radius           : 8px;
@@ -358,6 +358,7 @@ dt {
 }
 dd {
     width           : 70%;
+    font-family     : arial;
     padding-bottom  : 1.5em;
 }
 
@@ -368,7 +369,9 @@ dd {
         font-family : arial;
     }
 
-#changelog > div, 
+    dd code { background: #e8e8e8; }
+
+#changelog > div,
 #changelog ul {
     padding-left : 1.5em;
 }
@@ -392,7 +395,7 @@ fieldset {
 }
 
 #donate  form {
-    margin-top          : 1em;    
+    margin-top          : 1em;
 }
 
 #dwlink a ,
@@ -420,7 +423,7 @@ fieldset {
 }
 
 #chooseamount {
-    margin-bottom   : 1em;    
+    margin-bottom   : 1em;
 }
 
 #chooseamount , #choosecurr, #donate button {
@@ -444,7 +447,7 @@ fieldset {
 #donate label,
 #mecenate *,
 #chooseamount * {
-    color           : #A66C6D;    
+    color           : #A66C6D;
     text-align      : left;
     float           : left;
     height          : 50px;
@@ -470,11 +473,12 @@ fieldset {
     border          : 0;
     width           : 455px;
     font-family     : LeagueGothicRegular;
-    font-size       : 35px;    
+    font-size       : 35px;
 }
 
 #mecenate button {
     margin          : 0 0 1em 0;
+    line-height     : 45px;
 }
 
 
@@ -484,6 +488,8 @@ fieldset {
     line-height     : 50px;
     font-family     : LeagueGothicRegular;
     font-size       : 35px;
+    float           : none;
+    height          : 40px;
 }
 
 #choosecurr ul {
@@ -491,7 +497,7 @@ fieldset {
     margin              : 0;
 }
 #choosecurr li {
-    color           : #868688;    
+    color           : #868688;
     width           : 70px;
     float           : left;
     cursor          : pointer;
@@ -503,6 +509,7 @@ fieldset {
     padding         : 0 15px;
     margin          : 2px;
     height          : 45px;
+    line-height     : 45px;
     display         : block;
     border          : 1px #f2f2f6 solid;
 }
@@ -547,15 +554,64 @@ fieldset {
     margin-top      : 0;
 }
 
-    
+#about figure {
+    border      : 2px #A66C6D solid;
+    float       : left;
+    margin-right : 40px;
+}
+#about figure img {
+    display : block;
+}
 
+#raised {
+    color       : #A66C6D;
+    font-weight : normal;
+    font-style  : normal;
+
+}
+
+#suggest_donation {
+    background      : rgba(12,12,12, 0.7);
+    position        : fixed;
+    z-index         : 10;
+    height          : 100%;
+    width           : 100%;
+    margin          : 0 !important;
+    top     : 0;
+    left    : 0;
+    display : none;
+}
+
+#suggest_donation p {
+    margin          : 2em 0 1em 0;
+}
+
+#suggest_donation div > a {
+    position        : absolute;
+    z-index         : 11;
+    right           : 15px;
+    top             : 15px;
+    display         : block;
+    height          : 45px;
+    width           : 45px;
+}
+
+#suggest_donation div {
+    margin          : 40px auto 0 auto;
+    width           : 520px;
+    padding         : 25px;
+    background      : #f2f2f2;
+    position        : relative;
+    z-index         : 1;
+    border          :  2px #A66C6D solid;
+}
 
 @media print {
-    
+
     body, ol, ul, p, dl, dt, dd, code, pre, h1, h2, h3, code b  {
         text-shadow : none !important;
     }
-	
+
 	dl {
 		overflow	: auto;
 	}
@@ -563,27 +619,27 @@ fieldset {
     dt, dd {
         float       : none !important;
     }
-    
+
     body {
         font-size   : 10pt;
         color       : #414141;
     }
-    
+
     pre { border: 0; }
-    
-    
+
+
     h1, h2, h3 {
         font-family     : georgia;
     }
-    
+
     h1 {  font-size       : 25pt; }
     h2 {  font-size       : 20pt; }
     h3 {  font-size       : 15pt; }
-    
+
     a {
         text-decoration : none;
     }
-    
+
     a[href^="http://"]:link:after,
     a[href^="http://"]:visited:after {
       content       : "(" attr(href) ")";
@@ -593,18 +649,18 @@ fieldset {
       text-decoration : underline;
       color           : #888
     }
-    
+
     h1 a:link:after,
     h1 a:visited:after  {
         content     : "";
     }
-    
+
     header {
         border-bottom       : 1pt #888 solid;
     }
 
     header h3, .github-ribbon, .mosaiqy, .noprint { display: none; }
-    
+
     a[href^="#"] { display: none; }
 
     pre, code {

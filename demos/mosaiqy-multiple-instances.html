@@ -12,31 +12,38 @@
     
     <script>
     (function(doc) { 
-		doc.className = doc.className.replace(/(^|\b)no\-js(\b|$)/, 'js');
+        doc.className = doc.className.replace(/(^|\b)no\-js(\b|$)/, 'js');
     }(document.documentElement));
     </script>
 
     
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <script src="http://jdbartlett.com/innershiv/innershiv.js"></script>
     <![endif]-->
-
-
+    
+  
     <link rel="stylesheet" media="screen" href="../lib/lib-css/mosaiqy.css" />
 </head>
 
 <body>
-
-    
-    <div class="loading mosaiqy">
+   
+    <div class="loading mosaiqy" id="mosaiqy1">
         <ul></ul>
     </div>
     
-    
+    <div class="loading mosaiqy" id="mosaiqy2">
+        <ul></ul>
+    </div>
+
+    <div class="loading mosaiqy" id="mosaiqy3">
+        <ul></ul>
+    </div>
+
+	
     <!-- jquery & lib-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
     <script src="../lib/mosaiqy-1.0.2.min.js" id="mosaiqy_tpl">     
+
         <div>
             <figure><a href="../images/zoom/${img}"><img src="../images/thumb/${img}">
               <figcaption>${desc}</figcaption></a>
@@ -44,19 +51,16 @@
         </div>
     </script>
     
-
     <script>
     $(document).ready(function() {
         $('.mosaiqy').mosaiqy({
-            template        : "mosaiqy_tpl",
-            rows            : 2,
-            cols            : 2,
+            template        : 'mosaiqy_tpl',
+            rows            : 3,
+            cols            : 3,
             avoidDuplicates : true,
-            animationDelay  : 800,
-            animationSpeed  : 1200,
+            animationDelay  : 1500,
             loop            : true,
-            loadTimeout     : 5000,
-			data            : [
+	    data            : [
                 {
                     img     : "1.jpg",
                     desc    : "Rifugio &laquo;Citt&agrave; di Fiume&raquo;"
@@ -97,13 +101,42 @@
                 {
                     img     : "10.jpg",
                     desc    : "Veduta dal rifugio &laquo;Citt&agrave; di Fiume&raquo;"
+                },
+                {
+                    img     : "11.jpg",
+                    desc    : "3 cime di Lavaredo"
+                },
+                {
+                    img     : "12.jpg",
+                    desc    : "Mucche"
+                },
+                {
+                    img     : "13.jpg",
+                    desc    : "Una simpatica escursionista"
+                },
+                {
+                    img     : "14.jpg",
+                    desc    : "Cima Undici, Dolomiti di Sesto"
+                },
+                {
+                    img     : "15.jpg",
+                    desc    : "Laghi dei Piani(1)"
+                },
+                {
+                    img     : "16.jpg",
+                    desc    : "Il gatto del Rifugio &laquo;Antonio Locatelli&raquo;"
+                },
+                {
+                    img     : "17.jpg",
+                    desc    : "Laghi dei Piani(2)"
                 }
-            ]            
-            
-        });
+            ]        });
         
     });
-    </script> 
+    </script>
 
+
+
+     
 </body>
 </html>

@@ -70,6 +70,7 @@
             <li><a href="mosaiqy-nozoom.php">Thumbnail link (no zoom and no scroll)</a></li>
             <li><a href="mosaiqy-event-callbacks.php">Event callbacks</a></li>
             <li><a href="mosaiqy-mixed-load.php">Mixing initial images JSON/HTML</a></li>
+            <li><a href="mosaiqy-multiple-instances.php">Multiple instances</a></li>
             <li><a href="mosaiqy-flickr.php">Flickr</a></li>
             <li><a href="mosaiqy-flickr-nozoom.php">Flickr (no zoom, link to flickr photo page)</a></li>
             <li><a href="mosaiqy-instagram.php">Instagram</a></li>
@@ -82,26 +83,29 @@
          <h2>Changelog</h2>
          
          <div>
-            <h3>Version 1.0.0 <small>release date: <date>June 29, 2011</date>, 812 downloads</small></h3>
+            <h3>Version 1.0.0 <small>release date: <time>June 29, 2011</time>, 812 downloads</small></h3>
             <ul>
                <li>Initial release</li>
             </ul>
             
-            <h3>Version 1.0.1 <small>release date: <date>September 8, 2011</date></small></h3>
+            <h3>Version 1.0.1 <small>release date: <time>September 8, 2011</time>, 4322 downloads</small></h3>
             <ul>
                <li>Add: Zoom image is now optional. A straight link can be assigned to every thumbnail (see demo list)</li>
                <li>Add: Optional callbacks when a zoom image has been opened and/or closed (see demo list)</li>
                <li>Switched from <a href="http://developer.yahoo.com/yui/compressor/">YUI Compressor</a> to <a href="http://closure-compiler.appspot.com/home">Google Closure
-               Compiler</a> since it obtained a better compress ratio. Code is now smaller in size. <br />(~4% less both for minified only and minified + gzip)</li>
+               Compiler</a> since it achieved a better compress ratio. Code is now smaller in size. <br />(~4% less both for minified only and minified + gzip)</li>
             </ul>
-            <p> No bugs were reported so far.</p>
+            <p>Note: this version is intended for jQuery 1.6 and 1.7.</p>
             
-            <h3>Todo/ideas/rants for next releases</h3>
+            <h3>Version 1.0.2 <small>release date: <time>July 18, 2013</time></small></h3>
+            <p>This is a maintainance release due to the changed occured in jQuery since version 1.9</p>
             <ul>
-               <li>ARIA accessibility</li>
-               <li>Change timeouts with requestAnimationFrame <small>(see <a href="http://blog.joelambert.co.uk/2011/06/01/a-better-settimeoutsetinterval/" target="new">this article by Joe Lambert</a>)</small></li>
-               <li>A plugin for Wordpress 3.2 (a code contributor <del>would help a lot</del> is necessary here)</li>
+               <li>Fix: $.sub and $.browser have been deprecated.</li>
+               <li>Fix: $.bind and $.live were changed into $.on (with event delegation when needed)</li>
             </ul>
+            <p>Tested on jQuery 1.9, 1.10.2, 2.0.0 and 2.0.2</p>
+
+            
          </div>
          
    </section>   
@@ -112,7 +116,7 @@
         
         
         
-        <p>Mosaiqy was specifically designed for <strong>jQuery 1.6</strong> or newer and HTML5 pages, for an easy integration with 
+        <p>Mosaiqy 1.0.2 was specifically designed for <strong>jQuery 1.9</strong> or newer and HTML5 pages, for an easy integration with 
         Paul Irish's <a href="http://html5boilerplate.com/">HTML5 boilerplate</a>.</p>
         
         <p>If you don't use HTML5 boilerplate (as neither do all demo pages) you could run anyway this plugin:
@@ -129,9 +133,9 @@
 ...</code></pre>
 
         <p>
-            if you do not load <a href="http://www.modernizr.com/" target="new">modernizr</a> into your page, please make sure to insert the
+            Unless you're loading <a href="http://www.modernizr.com/" target="new">modernizr</a> into your page, please make sure to insert the
             snippet below into your <code>&lt;head&gt;</code> section.<br />
-            If you plan to run this plugin on IE versions prior to 9 you will need to include <a
+            If you plan to run this plugin on IE versions prior to 9 (and if you're also including jQuery < 1.7) you will need to include <a
             href="http://html5shim.googlecode.com" target="new">shiv</a> (you may omit the protocol) and
             <a href="http://jdbartlett.github.com/innershiv/" target="new">innerShiv</a> scripts
             inside a conditional comment.
@@ -140,7 +144,6 @@
         <pre><code>&lt;head&gt;
     &lt;!--[if lt IE 9]&gt;
         &lt;script src="//html5shim.googlecode.com/svn/trunk/html5.js"&gt; &lt;/script&gt;
-        &lt;script src="http://jdbartlett.com/innershiv/innershiv.js"&gt; &lt;/script&gt;
     &lt;![endif]--&gt;
     &lt;script&gt;
         (function(doc) { 
@@ -157,7 +160,7 @@
 
         <pre><code>&lt;link rel="stylesheet" media="screen" href="lib/lib-css/mosaiqy.css" /&gt;</code></pre>
         
-        <pre><code>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"&gt; &lt;/script&gt;
+        <pre><code>&lt;script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"&gt; &lt;/script&gt;
 &lt;script src="lib/mosaiqy-1.0.1.min.js" id="mosaiqy-tpl"&gt;&lt;/script&gt;</code></pre>
 
     </section>
@@ -168,7 +171,7 @@
         
         <p>
             The first thing to know is <strong>how</strong> the plugin works: the blocks on the grid are
-            generated by a HTML5 template (the highlighted rows) and the information about images (path of thumbnail/zoom and description)
+            generated by a HTML5 template (the highlighted rows) handlebars/mustache alike and the information about images (path of thumbnail/zoom and description)
             are retrieved by a JSON/JSONP data structure. This is the javascript snippet I used for the example in this page (you can find it at the bottom of the source code)
         </p>
         
@@ -201,7 +204,7 @@ $(document).ready(function() {
     <p>When you call the plugin you can specify some options (listed below). The most important one is <b>data</b>
     who accept an array of objects, each one containing the information about a single image (thumb and zoom).
     In this example, every object has <b>img</b> and a  <b>desc</b> key (of course you can name your
-    keys as you want). These key are dinamically replaced on the HTML5 template above
+    keys as you want). These key are dinamically interpolated with the HTML5 template above,
     respectively where the placeholders <b>${img}</b> and <b>${desc}</b> occur.</p>
     
     <p>If your data structure is not flat and you need to find a key into nested sub-objects you can use dot-notation.
@@ -228,7 +231,7 @@ $(document).ready(function() {
         (I wrote mine in the element that loads the plugin, just to reduce code) which <b>must</b> define
         an <strong>id</strong> attribute specified as the <b>template</b> option value;
         <li>The template <b>must</b> contain at least that specific markup. 
-        The thumbnail is represented by an <code>&lt;img&gt;</code> element wrapped in a <code>&lt;a&gt;</code> element (pointing to its zoom) and the
+        The thumbnail is represented by an <code>&lt;img&gt;</code> element, optionally wrapped in a <code>&lt;a&gt;</code> element (pointing to its zoom) and the
     <code>&lt;figcaption&gt;</code> should contain image caption and/or information. This minimum markup is necessary to make the plugin
     properly work.</li>
     </ol>
@@ -261,7 +264,7 @@ $(document).ready(function() {
             <em>Default value: 800 (0.8s)</em></dd>
             
             <dt id="opt-avoidDuplicates">avoidDuplicates</dt>
-                <dd>boolean flag (true or false). If the <a href="#opt-loop">loop</a> option is set to true,
+                <dd>boolean flag (true or false). If the <a href="#opt-loop"><code>loop</code></a> option is set to true,
                 the plugin loads a thumbnail
                 from the json even if the same image is already inside the grid. If <code>avoidDuplicates</code>
                 is set to true and JSON provides enough different images to load, the plugin will try to avoid
@@ -305,7 +308,7 @@ $(document).ready(function() {
             
             <dt id="opt-loop">loop</dt>
             <dd>boolean flag (true or false). if this option is set to false, when latest JSON
-            image is injected (regarding to <a href="#opt-avoidDuplicates">avoidDuplicates</a> option)
+            image is injected (regarding to <a href="#opt-avoidDuplicates"><code>avoidDuplicates</code></a> option)
             the plugin stops all sliding effects over the thumbnails. Otherwise JSON is reloaded
             continuously on a loop.
             <em>Default value: false</em>
@@ -334,7 +337,7 @@ $(document).ready(function() {
          <a href="#menu">Up</a>
          <h2>License &amp; Download</h2>
         
-         <p>
+        <p>
             Mosaiqy is an opensource project released under the <a href="http://creativecommons.org/licenses/by-nd/3.0/" target="new">Creative
             Commons Non-Derivative</a> (CC BY-ND 3.0) license. This means you are free to copy, distribute and transmit the work,
             to make also commercial use of the work under some restrictions (see carefully the link above). 
@@ -342,9 +345,9 @@ $(document).ready(function() {
         
          <?php $hitcount = @file_get_contents('count101.txt') ?>
          <p id="dwlink">
-            <a href="mosaiqy1.0.1.zip">Download CSS, JS and Demos <small>(approx. 1.4 Mb)</small>
-            <ins>Checksum: 60b20b47d260071f27db85600bef3d292bfa5f24  &mdash; Downloaded <?php echo $hitcount ?> times </ins></a>
-            <a href="lib/mosaiqy-1.0.1.min.js">Download only minified JS <small>(8.31 kb)</small>
+            <a href="mosaiqy1.0.2.zip">Download CSS, JS and Demos <small>(approx. 2Mb)</small>
+            <ins>Checksum: 60b20b47d260071f27db85600bef3d292bfa5f24  &mdash; Download #<?php echo $hitcount ?></ins></a>
+            <a href="lib/mosaiqy-1.0.2.min.js">Download only minified JS <small>(8.41 kb)</small>
             <ins>Checksum: b1d7b37f87fba0ace8ca108eda0bf2347c688667</ins></a>
          </p>
         
@@ -371,11 +374,12 @@ $(document).ready(function() {
             it on your projects please really consider to donate a fair amount (especially if you include it on
             commercial sites) since you saved a lot of time in development (I spent
             more than 200 hours of nightly/weekend job, between feasibility study, coding, testing and writing documentation).
-            Of course feel free to choose a different amount.
+            Of course feel free to choose a different amount. <em id="raised">(amount donated so far: <b>423.34 &euro;</b>,
+            <small>thanks to N. Matake, A. Gagnon, S. Nucci, B. Lord</small>)</em>.
         </p>
         <p>
             I will really appreciate your support &mdash; thank you! =)<br /> <small><b>Note:</b> PayPal takes a 3.4%
-            + 0.50 &euro; commission on all donations. Please mind this when donating.</small>
+            + 0.35 &euro; commission on all donations. Please mind this when donating.</small>
         </p>
     
         <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
@@ -383,16 +387,16 @@ $(document).ready(function() {
             <div>
                 <fieldset id="chooseamount">
                     <label for="amount">Enter an amount</label>
-                    <span><b id="currency_sign">&euro;</b><input type="text" name="amount" id="amount" value="4"
-                        placeholder="4.00" maxlength="7"></span> 
+                    <span><b id="currency_sign">&euro;</b><input type="text" name="amount" id="amount" value="5"
+                        placeholder="5.00" maxlength="7"></span> 
                 </fieldset>
                 <fieldset  id="choosecurr">
                     <label>Choose a currency</label>
                     <ul>
                         <li class="current"><span data-currency="EUR"  title="EUR">&euro;</span></li>
-                        <li><span data-currency="USD" title="USD (4&euro; is approx. 5.80$)">$</span></li>
-                        <li><span data-currency="GBP" title="GBP (4&euro; is approx. 3.65£)">£</span></li>
-                        <li><span data-currency="JPY" title="JPY (4&euro; is approx. 470&yen;)">&yen;</span></li>
+                        <li><span data-currency="USD" title="USD (5&euro; is approx. 6.6$)">$</span></li>
+                        <li><span data-currency="GBP" title="GBP (5&euro; is approx. 4.2£)">£</span></li>
+                        <li><span data-currency="JPY" title="JPY (5&euro; is approx. 500&yen;)">&yen;</span></li>
                     </ul>
                 </fieldset>
             </div>
@@ -462,20 +466,17 @@ $(document).ready(function() {
             and finally thanks to my wife <strong>Laura</strong> for the patience.
             
         </p>
+        
+        <p>
+            A special mention goes to the melon's cream at 17% I found in a local fair, who gave me 
+            the opportunity to reach a couple of times the well-known <a href="http://xkcd.com/323/">Ballmer peak</a> helping me in
+            some circustances on writing code.
+            Sometimes I think if I had not documented the plugin, maybe today I couldn't tell
+            how the hell the code works =)
+        </p>
     </section>
     
-    
-    
-    <!--
-            A great thank goes to the melon's cream at 17% I found in a local fair, who gave me the opportunity
-            to easily reach the well-known Ballmer peak (http://xkcd.com/323/) helping me in some circustances
-            on writing code. Sometimes I think if I had not documented the plugin, maybe today I couldn't tell
-            how the hell my code works =)
-    -->
-    
-    
-    <?php require "includes/socialshare.php" ?>
-    
+  
     
     
     
@@ -532,8 +533,8 @@ $(document).ready(function() {
     <!-- this is not needed for plugin but if you need a simple page scroller... -->
     <script>
     $(document).ready(function() {
-        var page        =  ($.browser.opera)? $("html") : $("html,body"),
-            pagescroll  =  function(evt) {
+        var page        =  $('html:not(:animated), body:not(:animated)'),
+            pagescroll  =  function(evt, dontprevent) {
             var elementID       = $(this).attr('href'),
                 elementOffset   = $(elementID).offset().top;
                 pageOffset      = (document.body.scrollTop !== 0)
@@ -547,14 +548,21 @@ $(document).ready(function() {
             
             if (pageScroll) {   
                 page.animate({ scrollTop: elementOffset }, timeScroll, function() {
-                    location.href = elementID;
+                    if (!dontprevent) { location.href = elementID; }
                 });
             }
-            
-            evt.preventDefault();
+
+             
+            if (!dontprevent) {
+                evt.preventDefault();
+            }
         };
         
-        
+
+        $('#dwlink a:first').bind('click', function(evt) {
+            $('nav a[href="#donate"]').trigger('click', true);
+        })
+            
         
         $('nav a').bind('click', pagescroll);
         $('section > a').bind('click', pagescroll);

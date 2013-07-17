@@ -31,7 +31,7 @@
         
     <noscript>Sorry, Javascript is not enabled on your browser</noscript>
     
-    <p id="demotitle">Photos retrieved on <a href="http://instagram.com/" target="new">Instagram</p>
+    <p id="demotitle">Photos retrieved on <a href="http://instagram.com/" target="new">Instagram</a></p>
         
     <section>
         <h2>Integration code</h2>

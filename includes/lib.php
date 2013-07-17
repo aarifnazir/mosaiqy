@@ -15,6 +15,5 @@
 
 	
 	<!-- jquery & lib-->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.3/jquery.min.js"> </script>
-    <script>!window.jQuery && document.write('<script src="http://static.fabriziocalderan.it/js/jquery-1.6.1.min.js">\x3C/script>'); </script>
-    <script src="lib/mosaiqy-1.0.1.min.js" id="mosaiqy_tpl">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+    <script src="lib/mosaiqy-1.0.2.js" id="mosaiqy_tpl">

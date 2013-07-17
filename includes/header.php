@@ -1,8 +1,11 @@
 <?php
     ini_set("session.gc_maxlifetime", "1200"); 
     if (!session_id()) { session_start(); }
+	if (!isset($_SESSION['hits'])) {
+		$_SESSION['hits'] = 0;
+	}
     if (!isset($_SESSION['referrer']) || $_SESSION['referrer'] == '') {
-        $_SESSION['referrer'] = $_SERVER['HTTP_REFERER'];
+        $_SESSION['referrer'] = @$_SERVER['HTTP_REFERER'];
     }
 ?>
 <!doctype html>
