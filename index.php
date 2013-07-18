@@ -346,7 +346,7 @@ $(document).ready(function() {
          <?php $hitcount = @file_get_contents('count102.txt') ?>
          <p id="dwlink">
             <a href="mosaiqy1.0.2.zip">Download CSS, JS and Demos <small>(approx. 2Mb)</small>
-            <ins>Checksum: 57aca424696a6461c3fe093d64e81805  &mdash; Download #<?php echo $hitcount ?></ins></a>
+            <ins>Checksum: fb373d74491f8c20702125fed1852516  &mdash; Download #<?php echo $hitcount ?></ins></a>
             <a href="lib/mosaiqy-1.0.2.min.js">Download only minified JS <small>(8.41 kb)</small>
             <ins>Checksum: 3e2535cfb764c8aa28882fe5ef6e515a</ins></a>
          </p>
